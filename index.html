@@ -1,0 +1,261 @@
+<html>
+<head>
+	 <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="frontend-bootcamp.css" rel="stylesheet">
+
+ 	<!-- <script type="text/javascript">
+		$(document).ready(function(){
+	    	$('.modal').modal();
+	  	});
+  	</script> -->
+
+</head>
+<body>
+	<center><h1>Look at bottom right corner of the screen</h1></center>
+		<div class="container">
+			<div id="sample">
+				<a onclick="pop_chat();"><i class="material-icons">chat</i></a>
+				<!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+			</div>
+			<!-- <div class="row">
+					<div id="modal1" class="modal">
+				    <div class="modal-content">
+				      <h4>Modal Header</h4>
+				      <p>A bunch of text</p>
+				    </div>
+				    <div class="modal-footer">
+				      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+				    </div>
+				</div>
+			</div> -->
+			<div class="row outer-box">
+				<div class="chat-box " id="chat-box">
+					<div class="header main">
+						<div class="left-box">
+							<div class="back-icon-box">
+								<i class="fa material-icons">arrow_back</i>
+							</div><br>
+							<h1 class="header-title">Inbox</h1>
+							<p class="header-description">Typically replies within 2 minutes</p>
+							<!-- <span class="col s10 white-text">CrazyFr3ak</span> -->
+						</div>
+						<div class="close-window" onclick="close_window()">
+							<i class="fa material-icons">close</i>
+						</div>
+						<div class="avatar">
+							<span class="avatar-block">
+								<span class="avatar-block2">
+									<span class="avatar-content">S</span>
+								</span>
+							</span>
+						</div>
+						<!-- <a class="close white-text" href="javascript:void(0)" onclick="close_window();"><i class="material-icons">close</i></a> -->
+					</div>
+
+
+					<!-- ---------Alternate Header -------- -->
+
+					<div class="header alternative">
+						<div class="left-box">
+							<div class="back-icon-box">
+								<i class="fa material-icons">content_copy</i>
+							</div><br>
+							<h1 class="header-title">Frequently Asked Questions</h1>
+							<p class="header-description">Browse through answers to common queries</p>
+							<!-- <span class="col s10 white-text">CrazyFr3ak</span> -->
+						</div>
+						<div class="close-window" onclick="close_window()">
+							<i class="fa material-icons">close</i>
+						</div>
+						<div class="avatar">
+							<span class="avatar-block">
+								<span class="avatar-block2">
+									<span class="avatar-content"><i class="material-icons">search</i></span>
+								</span>
+							</span>
+						</div>
+						<!-- <a class="close white-text" href="javascript:void(0)" onclick="close_window();"><i class="material-icons">close</i></a> -->
+					</div>
+
+					<!-- ----------------- Body ------------------- -->
+
+					<div class="content">
+						<!-- <ul class="convo-content"><li>1</li><li>2</li></ul>
+						<ul class="user-content" id="user-content"><li id="msg1">Holaaa</li></ul> -->
+						<div class="message-box">
+							<div class="message-box-padded">
+								<div class="message-box-topspace">
+									
+									<div class="welcome-message-box" >
+										<div class="agent-pic">
+											<img src="https://peacock.webpush.freshchat.com/cd0ed064d0988d279bde3bf61649c4c2798bc264e5f3aa1ada2dc3fe07ce0551/f_hlimage/u_e5036cd9aaa3ba8f28aa227bbea81ac2f92a05222c5cd010ee3970b2bc6090a3/img_1532604442449.jpeg">
+										</div>
+										<div class="message-content">
+											<h3 class="agent-name">Peacock App</h3>
+											<ul>
+												<li>
+													<div class="message-bubble">
+														<div class="message">
+															Hello there! Need help? Reach out to us right here, and we'll get back to you as soon as we can!
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="user-chat">
+									<div class="user-chat-container">
+										<div class="user-chat-box">
+											<ul class="dynamic">
+												<li>
+													<div class="user-chat-1">
+														<div class="user-chat-content">
+															Hi
+														</div>
+													</div>
+												</li>
+												<li class="dynamic-content">
+													<div class="user-chat-2">
+														<div class="user-chat-content">
+															Testing with a bigger message
+														</div>
+													</div>
+											</ul>
+											<div class="timestamp">
+												Aug 14, 5:49 PM
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!---- Alternative Body ---->
+
+								<ul class="faq-box">
+									<li class="faq-option">
+										<div class="faq-option-box">
+											<div class="faq-option-avatar">
+												<img class="faq-option-img" src="https://fc-use1-00-pics-bkt-00.s3.amazonaws.com/7bd3e9b8c21cdb786dfdbb5fd4db00dc0df7bbc1c424412fbd2fcd3be1245a16/f_ckimage/u_e5036cd9aaa3ba8f28aa227bbea81ac2f92a05222c5cd010ee3970b2bc6090a3/img_1503297857490.png">
+											</div>Payments
+										</div>
+									</li>
+									<li class="faq-option">
+										<div class="faq-option-box">
+											<div class="faq-option-avatar">
+												<img class="faq-option-img" src="https://fc-use1-00-pics-bkt-00.s3.amazonaws.com/7bd3e9b8c21cdb786dfdbb5fd4db00dc0df7bbc1c424412fbd2fcd3be1245a16/f_ckimage/u_e5036cd9aaa3ba8f28aa227bbea81ac2f92a05222c5cd010ee3970b2bc6090a3/img_1503297857490.png">
+											</div>Shipping & Delivery
+										</div>
+									</li>
+									<li class="faq-option">
+										<div class="faq-option-box">
+											<div class="faq-option-avatar">
+												<img class="faq-option-img" src="https://fc-use1-00-pics-bkt-00.s3.amazonaws.com/7bd3e9b8c21cdb786dfdbb5fd4db00dc0df7bbc1c424412fbd2fcd3be1245a16/f_ckimage/u_e5036cd9aaa3ba8f28aa227bbea81ac2f92a05222c5cd010ee3970b2bc6090a3/img_1503297857490.png">
+											</div>Returns & Refunds
+										</div>
+									</li>
+									<li class="faq-option">
+										<div class="faq-option-box">
+											<div class="faq-option-avatar">
+												<img class="faq-option-img" src="https://fc-use1-00-pics-bkt-00.s3.amazonaws.com/7bd3e9b8c21cdb786dfdbb5fd4db00dc0df7bbc1c424412fbd2fcd3be1245a16/f_ckimage/u_e5036cd9aaa3ba8f28aa227bbea81ac2f92a05222c5cd010ee3970b2bc6090a3/img_1503297857490.png">
+											</div>Orders
+										</div>
+									</li>
+								</ul>
+
+
+
+						</div>
+						<div class="input-space">
+							<div class="reply-box">
+								<div class="product-name">
+									⚡ by CFWidget 
+								</div>
+								<input id="input-box" placeholder="Reply here">
+								<div class="attach-box">
+									<i class="material-icons">attach_file</i>
+								</div>
+								<div class="smiley-box">
+									<i class="material-icons">insert_emoticon</i>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ---------------- Footer ------------------- -->
+					<div class="footer">
+						<!-- <form id="user-form" style="margin:0" onsubmit="function1();"><div class="input-field col s10" id="input-user">
+							<input class="validate" id="user-msg" placeholder="Type here...">
+						</div>
+						<div class="col s1" id="input-button">
+							<button class="btn-floating waves-effect waves-light blue" type="submit"><i class="material-icons">send</i></button>
+						</div></form> -->
+						<div class="tab-chat">
+							<div class="tab-chat-content">
+								<i class="material-icons">chat</i> Chat
+							</div>
+						</div>
+						<div class="tab-faq" onclick="header_change();">
+							<div class="tab-faq-content">
+								<i class="material-icons">content_copy</i> FAQ
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var pop_chat=function(){
+				$("#chat-box").show();
+				$('#sample').hide();
+			};
+			var close_window=function(){
+				$('#chat-box').hide();
+				$('#sample').show();
+			};
+			function function1() {
+			  var ul = document.getElementById("user-content");
+			  var li = document.createElement("li");
+			  li.appendChild(document.createTextNode(document.getElementById('user-msg').value));
+			  ul.appendChild(li);
+			  document.getElementById('user-form').reset();
+			};
+			var dynamic_content=function(){
+				var ul=	document.getElementsByClassName("dynamic");
+				var li= document.createElement("li");
+				var div_create = document.createElement("div");
+				var classadd = ul.classList.add(""); //user-chat-2 user-chat-content
+			}
+			var header_change=function(){
+				$('.main').hide();
+				$('.alternative').show();
+				$('.back-icon-box').css({'cursor':'default'});
+				$('.avatar-block2').addClass('avatar-block2-alt');
+				$('.tab-faq').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'});
+				$('.tab-chat').css({'border-bottom':'none','cursor':'pointer'});
+				$('.message-box-padded').hide();
+				$('.faq-box').show();
+				$('.tab-chat').click(function(){
+					$('.main').show();
+					$('.alternative').hide();
+					$('.tab-chat').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'});
+					$('.tab-faq').css({'border-bottom':'none','cursor':'pointer'});
+					$('.avatar-block2').removeClass('avatar-block2-alt');
+					$('.message-box-padded').show();
+					$('faq-box').hide();
+					$('.back-icon-box').css({'cursor':'pointer'});
+				})
+			}
+		</script>
+</body>
+</html>

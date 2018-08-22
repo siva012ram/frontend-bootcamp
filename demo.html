@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+ 
+</style>
+</head>
+<body>
+<ul class="dynamic">
+	<li> Helllllllo </li>
+	<li class="dynamic-content">
+		<div class="message-content">
+			<div class="message">
+			</div>
+		</div>
+	</li>
+</ul>
+	<input type="text" class="text-box">
+	<button type="button" value="ClicktoGenerate" onclick="test();">
+<script type="text/javascript">
+	var test = function(){
+		var ul = document.getElementsByClassName("dynamic");
+		var li = document.createElement("li");
+		var div = document.createElement("div");
+		var input = document.getElementsByClassName("text-box")
+		console.log(input[0].value);
+		var insideDiv = div.appendChild(document.createTextNode(input[0].value))
+		insideDiv.classList.add("dynamic-box");
+		var insideDivClass = document.getElementsByClassName("dynamic-box");
+		var insideSecondDiv = div.appendChild(insideDivClass[0]);
+		insideSecondDiv.classList.add("dynamic-dabba-1");
+		var insideSecondDivClass = document.getElementsByClassName("dynamic-dabba-1");
+		var outsideLi = li.appendChild(insideSecondDivClass[0]);
+		outsideLi.classList.add("dynamic-content-2");
+		var outsideLiClass = document.getElementsByClassName("dynamic-content-2");
+		ul[0].appendChild(outsideLiClass[0]);
+	}
+
+</script>
+</body>
+</html>
