@@ -91,7 +91,7 @@
 					<div class="content">
 						<!-- <ul class="convo-content"><li>1</li><li>2</li></ul>
 						<ul class="user-content" id="user-content"><li id="msg1">Holaaa</li></ul> -->
-						<div class="message-box">
+						<div class="message-box abc">
 							<div class="message-box-padded">
 								<div class="message-box-topspace">
 									
@@ -130,6 +130,28 @@
 															Testing with a bigger message
 														</div>
 													</div>
+												</li>
+												<li class="dynamic-content">
+													<div class="user-chat-2">
+														<div class="user-chat-content">
+															Testing with a bigger message
+														</div>
+													</div>
+												</li>
+												<li class="dynamic-content">
+													<div class="user-chat-2">
+														<div class="user-chat-content">
+															Testing with a bigger message
+														</div>
+													</div>
+												</li>
+												<li class="dynamic-content">
+													<div class="user-chat-2" >
+														<div class="user-chat-content">
+															Testing with a bigger message
+														</div>
+													</div>
+												</li>
 											</ul>
 											<div class="timestamp">
 												Aug 14, 5:49 PM
@@ -214,11 +236,17 @@
 				</div>
 			</div>
 		</div>
+		<button type="button" onclick="test()">Hello</button>
 		<script type="text/javascript">
 			var pop_chat=function(){
 				$("#chat-box").show();
 				$('#sample').hide();
+				scrollBottom();
 			};
+			var scrollBottom = function(){
+				var objDiv = document.getElementsByClassName("abc")[0];
+				objDiv.scrollTop = objDiv.scrollHeight;
+			}
 			var close_window=function(){
 				$('#chat-box').hide();
 				$('#sample').show();
@@ -256,6 +284,56 @@
 					$('.back-icon-box').css({'cursor':'pointer'});
 				})
 			}
+
+			var test = function(){
+			var ul = document.getElementsByClassName("dynamic");
+			var li = document.createElement("li");
+			var div = document.createElement("div");
+			var input = document.getElementById("input-box");
+			console.log(input);
+			//let divElementOne = div.appendChild(document.createTextNode(input.value));
+			// var insideDiv = div.appendChild(document.createTextNode(input[0].value))
+			// insideDiv.classList.add("dynamic-box");
+			// var insideDivClass = document.getElementsByClassName("dynamic-box");
+			// var insideSecondDiv = div.appendChild(insideDivClass[0]);
+			// insideSecondDiv.classList.add("dynamic-dabba-1");
+			// var insideSecondDivClass = document.getElementsByClassName("dynamic-dabba-1");
+			// var outsideLi = li.appendChild(insideSecondDivClass[0]);
+			// outsideLi.classList.add("dynamic-content-2");
+			// var outsideLiClass = document.getElementsByClassName("dynamic-content-2");
+			// ul[0].appendChild(outsideLiClass[0]);
+			// div.appendChild(document.createTextNode(input[0].value));
+			// let temp = document.getElementsByClassName("dynamic-dabba-one");
+			// console.log(temp);
+			// div.classList.add("dynamic-dabba-one");
+			// console.log(temp[0]);
+			// // div.appendChild()
+			// console.log(document.getElementsByClassName("dynamic-dabba-one"));
+			// console.log(ul);
+			// console.log(ul[0]);
+
+			ul[0].appendChild(li);
+			li.appendChild(div);
+			li.classList.add("dynamic_content");
+
+			div.classList.add("user-chat-2");
+			fnTest(input);
+			input.value = '';
+			scrollBottom();
+			
+			// div.classList.add("dynamic-dabba-two");
+			
+		}
+
+		let fnTest = function(input){
+			let div = document.getElementsByClassName("user-chat-2");
+			let divTwo = document.createElement("div");
+			divTwo.classList.add("user-chat-content");
+			divTwo.appendChild(document.createTextNode(input.value));
+			// divTwo.classList.add("dynamic-dabba-two");
+			div[0].appendChild(divTwo);
+		}
+
 		</script>
 </body>
 </html>

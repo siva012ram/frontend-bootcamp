@@ -19,7 +19,7 @@
 	</li>
 </ul>
 	<input type="text" class="text-box">
-	<button type="button" value="ClicktoGenerate" onclick="test();">
+	<button type="button" value="ClicktoGenerate" onclick="test();"></button>
 <script type="text/javascript">
 	var test = function(){
 		var ul = document.getElementsByClassName("dynamic");
@@ -27,18 +27,42 @@
 		var div = document.createElement("div");
 		var input = document.getElementsByClassName("text-box")
 		console.log(input[0].value);
-		var insideDiv = div.appendChild(document.createTextNode(input[0].value))
-		insideDiv.classList.add("dynamic-box");
-		var insideDivClass = document.getElementsByClassName("dynamic-box");
-		var insideSecondDiv = div.appendChild(insideDivClass[0]);
-		insideSecondDiv.classList.add("dynamic-dabba-1");
-		var insideSecondDivClass = document.getElementsByClassName("dynamic-dabba-1");
-		var outsideLi = li.appendChild(insideSecondDivClass[0]);
-		outsideLi.classList.add("dynamic-content-2");
-		var outsideLiClass = document.getElementsByClassName("dynamic-content-2");
-		ul[0].appendChild(outsideLiClass[0]);
+		// var insideDiv = div.appendChild(document.createTextNode(input[0].value))
+		// insideDiv.classList.add("dynamic-box");
+		// var insideDivClass = document.getElementsByClassName("dynamic-box");
+		// var insideSecondDiv = div.appendChild(insideDivClass[0]);
+		// insideSecondDiv.classList.add("dynamic-dabba-1");
+		// var insideSecondDivClass = document.getElementsByClassName("dynamic-dabba-1");
+		// var outsideLi = li.appendChild(insideSecondDivClass[0]);
+		// outsideLi.classList.add("dynamic-content-2");
+		// var outsideLiClass = document.getElementsByClassName("dynamic-content-2");
+		// ul[0].appendChild(outsideLiClass[0]);
+		// div.appendChild(document.createTextNode(input[0].value));
+		// let temp = document.getElementsByClassName("dynamic-dabba-one");
+		// console.log(temp);
+		// div.classList.add("dynamic-dabba-one");
+		// console.log(temp[0]);
+		// // div.appendChild()
+		// console.log(document.getElementsByClassName("dynamic-dabba-one"));
+		// console.log(ul);
+		// console.log(ul[0]);
+		div.classList.add("dynamic-dabba-one");
+		li.appendChild(div)
+		ul[0].appendChild(li);
+		// div.classList.add("dynamic-dabba-two");
+		fnTest(input);
+	}
+
+	let fnTest = function(input){
+		let div = document.getElementsByClassName("dynamic-dabba-one");
+		let divTwo = document.createElement("div");
+		divTwo.classList.add("dynamic-dabba-two");
+		divTwo.appendChild(document.createTextNode(input[0].value));
+		// divTwo.classList.add("dynamic-dabba-two");
+		div[0].appendChild(divTwo);
 	}
 
 </script>
 </body>
 </html>
+
