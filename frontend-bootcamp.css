@@ -280,6 +280,31 @@ a > i{
 	font-weight: 100;
 	opacity: 0.9;
 }
+.message-bubble-dynamic{
+	/*margin-top: 10px;*/
+	border-radius: 4px 20px 20px;
+	margin-bottom: 2px;
+	color: #fff;
+	background-color: #5b97e8;
+	padding: 12px 14px;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.05);
+    display: inline-block;
+    line-height: 1.25;
+    float: left;
+    min-height: 40px;
+    max-width: 300px;
+    clear: both;
+}
+.message-dynamic{
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	font-size: 12px;
+	white-space: pre-wrap;
+	font-weight: 100;
+	opacity: 0.9;
+}
+
 .message-content > ul{
 	margin:0;
 }
@@ -330,12 +355,21 @@ a > i{
     width: 39px;
 }
 .user-chat-content{
+    font-weight: 100;
+    opacity: 0.9;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 12px;
+    padding: 10px 5px 10px 10px;
+}
+.user-chat-content-one{
 	margin-top: 10;
     font-weight: 100;
     opacity: 0.9;
     vertical-align: middle;
-    text-align: center;
+    text-align: right;
     font-size: 12px;
+    padding-right: 10px;
 }
 .user-chat-2{
 	background-color: #fff;
@@ -344,9 +378,9 @@ a > i{
     display: inline-block;
     margin-bottom: 0;
     float: right;
-    border-radius: 20px 4px 8px 20px;
-    width: 199px;
-    height: 39px;
+    border-radius: 20px 2px 8px 20px;
+    max-width: 199px;
+    min-height: 40px;
     margin-top: 4px;
     clear:both;
 }

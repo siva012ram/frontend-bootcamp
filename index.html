@@ -119,7 +119,7 @@
 											<ul class="dynamic">
 												<li>
 													<div class="user-chat-1">
-														<div class="user-chat-content">
+														<div class="user-chat-content-one">
 															Hi
 														</div>
 													</div>
@@ -221,7 +221,7 @@
 						<div class="col s1" id="input-button">
 							<button class="btn-floating waves-effect waves-light blue" type="submit"><i class="material-icons">send</i></button>
 						</div></form> -->
-						<div class="tab-chat">
+						<div class="tab-chat" onclick="defaultChange();">
 							<div class="tab-chat-content">
 								<i class="material-icons">chat</i> Chat
 							</div>
@@ -236,11 +236,16 @@
 				</div>
 			</div>
 		</div>
-		<button type="button" onclick="test()">Hello</button>
+		<input type="text" id="input-box-two">
+		<button type="button" onclick="testTwo()">Hello</button>
 		<script type="text/javascript">
 			var pop_chat=function(){
-				$("#chat-box").show();
-				$('#sample').hide();
+				// $("#chat-box").show();
+				// $('#sample').hide();
+
+				Object.assign(document.getElementById("sample").style,{display:"none"});
+				Object.assign(document.getElementById("chat-box").style,{display:"block"});
+
 				scrollBottom();
 			};
 			var scrollBottom = function(){
@@ -248,8 +253,11 @@
 				objDiv.scrollTop = objDiv.scrollHeight;
 			}
 			var close_window=function(){
-				$('#chat-box').hide();
-				$('#sample').show();
+				// $('#chat-box').hide();
+				// $('#sample').show();
+				document.getElementById("chat-box").removeAttribute("style");
+				document.getElementById("sample").removeAttribute("style");
+
 			};
 			function function1() {
 			  var ul = document.getElementById("user-content");
@@ -264,27 +272,53 @@
 				var div_create = document.createElement("div");
 				var classadd = ul.classList.add(""); //user-chat-2 user-chat-content
 			}
+			document.getElementById("input-box").addEventListener("keydown",function(event){
+				if(event.keyCode == 13){
+					test();
+				}
+			});
 			var header_change=function(){
-				$('.main').hide();
-				$('.alternative').show();
-				$('.back-icon-box').css({'cursor':'default'});
-				$('.avatar-block2').addClass('avatar-block2-alt');
-				$('.tab-faq').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'});
-				$('.tab-chat').css({'border-bottom':'none','cursor':'pointer'});
-				$('.message-box-padded').hide();
-				$('.faq-box').show();
-				$('.tab-chat').click(function(){
-					$('.main').show();
-					$('.alternative').hide();
-					$('.tab-chat').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'});
-					$('.tab-faq').css({'border-bottom':'none','cursor':'pointer'});
-					$('.avatar-block2').removeClass('avatar-block2-alt');
-					$('.message-box-padded').show();
-					$('faq-box').hide();
-					$('.back-icon-box').css({'cursor':'pointer'});
-				})
+				//$('.main').hide(); 
+				Object.assign(document.getElementsByClassName("main")[0].style,{display:"none"});
+				//$('.alternative').show(); 
+				Object.assign(document.getElementsByClassName("alternative")[0].style,{display:"block"});
+				//$('.back-icon-box').css({'cursor':'default'}); 
+				Object.assign(document.getElementsByClassName("back-icon-box")[1].style,{cursor:"default"});
+				//$('.avatar-block2').addClass('avatar-block2-alt'); 
+				document.getElementsByClassName("avatar-block2")[1].classList.add("avatar-block2-alt");
+				//$('.tab-faq').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'}); 
+				Object.assign(document.getElementsByClassName("tab-faq")[0].style,{borderBottom:'3px solid',borderBottomColor:'#5b97e8',cursor:'default'});
+				//$('.tab-chat').css({'border-bottom':'none','cursor':'pointer'}); 
+				Object.assign(document.getElementsByClassName("tab-chat")[0].style,{borderBottom:'none',cursor:'pointer'});
+				//$('.message-box-padded').hide(); 
+				Object.assign(document.getElementsByClassName("message-box-padded")[0].style,{display:"none"});
+				//$('.faq-box').show(); 
+				Object.assign(document.getElementsByClassName("faq-box")[0].style,{display:"block"});
+				// $('.tab-chat').click(function(){ 
+				// 	$('.main').show();
+				// 	$('.alternative').hide();
+				// 	$('.tab-chat').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'});
+				// 	$('.tab-faq').css({'border-bottom':'none','cursor':'pointer'});
+				// 	$('.avatar-block2').removeClass('avatar-block2-alt');
+				// 	$('.message-box-padded').show();
+				// 	$('faq-box').hide();
+				// 	$('.back-icon-box').css({'cursor':'pointer'});
+				// });
 			}
+			let defaultChange = function(){
+				document.getElementsByClassName("main")[0].removeAttribute("style");
+				document.getElementsByClassName("alternative")[0].removeAttribute("style");
+				document.getElementsByClassName("tab-chat")[0].removeAttribute("style");
+				document.getElementsByClassName("tab-faq")[0].removeAttribute("style");
+				document.getElementsByClassName("avatar-block2")[1].classList.remove("avatar-block2-alt");
+				document.getElementsByClassName("faq-box")[0].removeAttribute("style");
+				document.getElementsByClassName("back-icon-box")[1].removeAttribute("style");
+				document.getElementsByClassName("message-box-padded")[0].removeAttribute("style");
+				scrollBottom();
+			};
 
+			var count = 4;
+			var counter = 0;
 			var test = function(){
 			var ul = document.getElementsByClassName("dynamic");
 			var li = document.createElement("li");
@@ -317,22 +351,79 @@
 			li.classList.add("dynamic_content");
 
 			div.classList.add("user-chat-2");
-			fnTest(input);
+			fnTest(input,count);
 			input.value = '';
 			scrollBottom();
+			count+= 1;
 			
 			// div.classList.add("dynamic-dabba-two");
 			
 		}
 
-		let fnTest = function(input){
+		let fnTest = function(input,count){
 			let div = document.getElementsByClassName("user-chat-2");
 			let divTwo = document.createElement("div");
-			divTwo.classList.add("user-chat-content");
+			div[count].appendChild(divTwo);
 			divTwo.appendChild(document.createTextNode(input.value));
+			divTwo.classList.add("user-chat-content");
+			
 			// divTwo.classList.add("dynamic-dabba-two");
-			div[0].appendChild(divTwo);
+			
 		}
+
+
+		var testTwo = function(){
+			var ul = document.getElementsByClassName("dynamic");
+			var li = document.createElement("li");
+			var div = document.createElement("div");
+			var input = document.getElementById("input-box-two");
+			console.log(input.value);
+			//let divElementOne = div.appendChild(document.createTextNode(input.value));
+			// var insideDiv = div.appendChild(document.createTextNode(input[0].value))
+			// insideDiv.classList.add("dynamic-box");
+			// var insideDivClass = document.getElementsByClassName("dynamic-box");
+			// var insideSecondDiv = div.appendChild(insideDivClass[0]);
+			// insideSecondDiv.classList.add("dynamic-dabba-1");
+			// var insideSecondDivClass = document.getElementsByClassName("dynamic-dabba-1");
+			// var outsideLi = li.appendChild(insideSecondDivClass[0]);
+			// outsideLi.classList.add("dynamic-content-2");
+			// var outsideLiClass = document.getElementsByClassName("dynamic-content-2");
+			// ul[0].appendChild(outsideLiClass[0]);
+			// div.appendChild(document.createTextNode(input[0].value));
+			// let temp = document.getElementsByClassName("dynamic-dabba-one");
+			// console.log(temp);
+			// div.classList.add("dynamic-dabba-one");
+			// console.log(temp[0]);
+			// // div.appendChild()
+			// console.log(document.getElementsByClassName("dynamic-dabba-one"));
+			// console.log(ul);
+			// console.log(ul[0]);
+
+			ul[0].appendChild(li);
+			li.appendChild(div);
+			li.classList.add("dynamic_content");
+
+			div.classList.add("message-bubble-dynamic");
+			fnTestTwo(input,counter);
+			input.value = '';
+			scrollBottom();
+			counter+= 1;
+			
+			// div.classList.add("dynamic-dabba-two");
+			
+		}
+
+		let fnTestTwo = function(input,counter){
+			let div = document.getElementsByClassName("message-bubble-dynamic");
+			let divTwo = document.createElement("div");
+			div[counter].appendChild(divTwo);
+			divTwo.appendChild(document.createTextNode(input.value));
+			divTwo.classList.add("message-dynamic");
+			
+			// divTwo.classList.add("dynamic-dabba-two");
+			
+		}
+
 
 		</script>
 </body>

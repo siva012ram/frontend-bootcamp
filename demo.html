@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ek">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
- 
+ .tester{
+ 	display: none;
+ }
 </style>
 </head>
 <body>
 <ul class="dynamic">
-	<li> Helllllllo </li>
+	<li class="tester"> Helllllllo </li>
 	<li class="dynamic-content">
 		<div class="message-content">
-			<div class="message">
+			<div class="message">Hello
 			</div>
 		</div>
 	</li>
 </ul>
 	<input type="text" class="text-box">
-	<button type="button" value="ClicktoGenerate" onclick="test();"></button>
+	<button type="button" value="ClicktoGenerate" onclick="fnStyle();"></button>
+	<button type="button" value="ClicktoGenerate" onclick="fnStyle1();">SecondClick</button>
 <script type="text/javascript">
+	var count=4;
 	var test = function(){
 		var ul = document.getElementsByClassName("dynamic");
 		var li = document.createElement("li");
@@ -50,17 +54,79 @@
 		li.appendChild(div)
 		ul[0].appendChild(li);
 		// div.classList.add("dynamic-dabba-two");
-		fnTest(input);
+		fnTest(input,count);
+		count+=1;
 	}
 
-	let fnTest = function(input){
+	let fnTest = function(input,count){
 		let div = document.getElementsByClassName("dynamic-dabba-one");
 		let divTwo = document.createElement("div");
-		divTwo.classList.add("dynamic-dabba-two");
+		div[count].appendChild(divTwo);	
 		divTwo.appendChild(document.createTextNode(input[0].value));
+		divTwo.classList.add("dynamic-dabba-two");
 		// divTwo.classList.add("dynamic-dabba-two");
-		div[0].appendChild(divTwo);
+		
 	}
+	 let fnStyle = function(){
+	 	Object.assign(document.getElementsByClassName("dynamic-content")[0].style,{display:"none"});
+	 	Object.assign(document.getElementsByClassName("tester")[0].style,{display:"block",fontSize:"30px",color:"red",marginTop:"40px",marginLeft:"40px"});
+	 }
+	 let fnStyle1 = function(){
+	 	document.getElementsByClassName("tester")[0].removeAttribute('style');
+
+	 	document.getElementsByClassName("dynamic-content")[0].removeAttribute('style');
+
+	 }
+/*
+
+$('.main').hide(); 
+				Object.assign(document.getElementsByClassName("main")[0].style,{display:"none"});
+				$('.alternative').show(); Object.assign(document.getElementsByClassName("alternative")[0].style,{display:"block"});
+				$('.back-icon-box').css({'cursor':'default'}); Object.assign(document.getElementsByClassName("back-icon-box")[0].style,{cursor:"default"});
+				$('.avatar-block2').addClass('avatar-block2-alt'); document.getElementsByClassName("avatar-block2")[0].classList.add("avatar-block2-alt");
+				$('.tab-faq').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'}); Object.assign(document.getElementsByClassName("tab-faq")[0].style,{border-bottom:'3px solid',borderBottomColor:'#5b97e8',cursor:'default'});
+				$('.tab-chat').css({'border-bottom':'none','cursor':'pointer'}); Object.assign(document.getElementsByClassName("back-icon-box")[0].style,{borderBottom:'none',cursor:'pointer'});
+				$('.message-box-padded').hide(); Object.assign(document.getElementsByClassName("message-box-padded")[0].style,{display:"none"});
+				$('.faq-box').show(); Object.assign(document.getElementsByClassName("faq-box")[0].style,{display:"block"});
+
+
+
+
+				var header_change=function(){
+				$('.main').hide(); 
+				Object.assign(document.getElementsByClassName("main")[0].style,{display:"none"});
+				$('.alternative').show(); Object.assign(document.getElementsByClassName("alternative")[0].style,{display:"block"});
+				$('.back-icon-box').css({'cursor':'default'}); Object.assign(document.getElementsByClassName("back-icon-box")[0].style,{cursor:"default"});
+				$('.avatar-block2').addClass('avatar-block2-alt'); document.getElementsByClassName("avatar-block2")[0].classList.add("avatar-block2-alt");
+				$('.tab-faq').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'}); Object.assign(document.getElementsByClassName("tab-faq")[0].style,{border-bottom:'3px solid',borderBottomColor:'#5b97e8',cursor:'default'});
+				$('.tab-chat').css({'border-bottom':'none','cursor':'pointer'}); Object.assign(document.getElementsByClassName("tab-chat")[0].style,{borderBottom:'none',cursor:'pointer'});
+				$('.message-box-padded').hide(); Object.assign(document.getElementsByClassName("message-box-padded")[0].style,{display:"none"});
+				$('.faq-box').show(); Object.assign(document.getElementsByClassName("faq-box")[0].style,{display:"block"});
+				$('.tab-chat').click(function(){ 
+					$('.main').show();
+					$('.alternative').hide();
+					$('.tab-chat').css({'border-bottom':'3px solid','border-bottom-color':'#5b97e8','cursor':'default'});
+					$('.tab-faq').css({'border-bottom':'none','cursor':'pointer'});
+					$('.avatar-block2').removeClass('avatar-block2-alt');
+					$('.message-box-padded').show();
+					$('faq-box').hide();
+					$('.back-icon-box').css({'cursor':'pointer'});
+				});
+				document.getElementsByClassName("tab-chat")[0].click(function(){
+					Object.assign(document.getElementsByClassName("main")[0].removeAttribute("style");
+					Object.assign(document.getElementsByClassName("alternative")[0].removeAttribute("style");
+					Object.assign(document.getElementsByClassName("tab-chat")[0].removeAttribute("style");
+					Object.assign(document.getElementsByClassName("tab-faq")[0].removeAttribute("style");
+					document.getElementsByClassName("avatar-block2")[0].classList.remove("avatar-block2-alt");
+					Object.assign(document.getElementsByClassName("faq-box")[0].removeAttribute("style");
+					Object.assign(document.getElementsByClassName("back-icon-box")[0].removeAttribute("style");
+
+				})
+			}
+
+*/
+
+
 
 </script>
 </body>
