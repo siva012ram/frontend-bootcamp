@@ -1,0 +1,21 @@
+iframe{
+	/*position: fixed;
+	bottom: 25px;
+	right:25px;
+	height:600px;
+	width: 320px;*/
+	border-style: none;
+	border-width: 0;
+	/*border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;*/
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+.chat-frame{
+	position:fixed;
+	bottom: 20px;
+	right:10px;
+	height:70px;
+	width: 80px;
+}
